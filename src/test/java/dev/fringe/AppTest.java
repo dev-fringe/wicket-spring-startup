@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import dev.fringe.web.HomePage;
@@ -24,11 +23,7 @@ public class AppTest {
 	
     private WicketTester tester;
 
-    @Autowired
-    private ApplicationContext ctx;
-
-    @Autowired
-    private WicketWebConfig myWebApplication;
+    @Autowired WicketWebConfig myWebApplication;
 
     @Before
     public void setUp() {
@@ -40,7 +35,7 @@ public class AppTest {
 		tester.startPage(HomePage.class);
 		tester.assertRenderedPage(HomePage.class);
         FormTester formTester = tester.newFormTester("form");
-        formTester.setValue("msgInput", "sd");
+        formTester.setValue("msgInput", "안녕하세요. 이학도님");
         formTester.submit();
         String html = tester.getLastResponse().getDocument();
         Document doc = Jsoup.parse(html);
