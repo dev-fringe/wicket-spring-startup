@@ -1,6 +1,5 @@
 package dev.fringe;
 
-import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,12 +13,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import dev.fringe.config.WicketWebConfig;
+import dev.fringe.web.list.MovieList;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureRestDocs
-public class AppTest {
+public class MovieTest {
 	
     private WicketTester tester;
 
@@ -32,11 +32,8 @@ public class AppTest {
     
 	@Test
 	public void test() {
-		tester.startPage(Index.class);
-		tester.assertRenderedPage(Index.class);
-        FormTester formTester = tester.newFormTester("form");
-//        formTester.setValue("field", "블라 블라");
-        formTester.submit();
+		tester.startPage(MovieList.class);
+		tester.assertRenderedPage(MovieList.class);
         String html = tester.getLastResponse().getDocument();
         Document doc = Jsoup.parse(html);
         System.out.println(doc.body().toString());

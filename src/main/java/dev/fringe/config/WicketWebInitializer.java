@@ -1,4 +1,4 @@
-package dev.fringe;
+package dev.fringe.config;
 
 import javax.servlet.DispatcherType;
 import javax.servlet.ServletContext;
