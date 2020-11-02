@@ -1,4 +1,4 @@
-package dev.fringe.web.model;
+package dev.fringe.model;
 
 import java.io.Serializable;
 
@@ -16,6 +16,12 @@ public class Movie implements Serializable {
 		this.setTitle(title);
 	}
 
+	public Movie(String _title, Integer _year) {
+		super();
+		this._title = _title;
+		this._year = _year;
+	}
+
 	public void setTitle(String title) {
 		this._title = title;
 	}
@@ -30,5 +36,9 @@ public class Movie implements Serializable {
 
 	public Integer getYear() {
 		return this._year;
+	}
+
+	public String toString() {
+		return "Movie [_title=" + _title + ", _year=" + _year + "]";
 	}
 }

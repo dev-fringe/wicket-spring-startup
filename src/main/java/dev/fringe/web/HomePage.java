@@ -14,8 +14,10 @@ import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.wicketstuff.lambda.components.ComponentFactory;
 
-import dev.fringe.web.service.AppService;
+import dev.fringe.service.AppService;
+import dev.fringe.web.list.MovieList;
 
 public class HomePage extends WebPage {
 
@@ -23,16 +25,14 @@ public class HomePage extends WebPage {
 
 	@SpringBean
 	AppService appService;
-    private String message = "[type your message to the world here]";
-    
-	public HomePage(final PageParameters parameters) {
-       PropertyModel<String> messageModel = new PropertyModel<>(this, "message");
+	private String message = "[type your message to the world here]";
 
+	public HomePage(final PageParameters parameters) {
+		PropertyModel<String> messageModel = new PropertyModel<>(this, "message");
 		add(new Label("msg", messageModel));
 		Form<?> form = new Form<>("form");
 		form.add(new TextField<>("msgInput", messageModel));
 		add(form);
-
 		this.getSession().setLocale(Locale.ENGLISH);
 		add(new Label("friend", new ResourceModel("friend")));
 		final ModalDialog modal = new ModalDialog("modal");
@@ -48,13 +48,16 @@ public class HomePage extends WebPage {
 				modal.open(target);
 			}
 		});
+		add(ComponentFactory.link("linkList", (c) -> {
+			this.setResponsePage(new MovieList());
+		}));
 		add(new AjaxLink<Void>("change") {
 			private static final long serialVersionUID = 4306020048556940365L;
 
 			public void onClick(AjaxRequestTarget target) {
 				this.getSession().setLocale(Locale.KOREAN);
 			}
-		});		
+		});
 	}
 
 	public String getMessage() {
@@ -64,7 +67,5 @@ public class HomePage extends WebPage {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
-	
 
 }

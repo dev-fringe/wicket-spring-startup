@@ -1,0 +1,21 @@
+<form wicket:id="search" method="get">
+	Text field: <input type="text" wicket:id="q" />
+	<input type="submit" value="Search using GET" />
+</form>
+		
+<form wicket:id="formPost" method="post">
+    Text field: <input type="text" wicket:id="field" />
+    <input type="submit" value="Search using POST" />
+</form>
+
+<form wicket:id="form">
+	<table>
+    <tr><th>Description</th><th>Input value</th><th>Model value</th></tr>
+    <tr><td>Required field:</td><td><input type="text" wicket:id="required" /></td><td wicket:id="value1"></td></tr>
+    <tr><td>Integer field:</td><td><input type="text" wicket:id="integer" /></td><td wicket:id="value2"></td></tr>
+    <tr><td>Must be one (1):</td><td><input type="text" wicket:id="mustbeone" /></td><td wicket:id="value3"></td></tr>
+    </table>
+    <input type="submit" value="Submit" />
+    <h4>Feedback messages for this form</h4>
+    <div wicket:id="feedback"></div>
+</form>

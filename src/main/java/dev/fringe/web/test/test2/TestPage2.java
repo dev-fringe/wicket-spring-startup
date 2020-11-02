@@ -1,4 +1,4 @@
-package dev.fringe.web.test2;
+package dev.fringe.web.test.test2;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;

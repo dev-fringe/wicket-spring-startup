@@ -1,6 +1,7 @@
 package dev.fringe.config;
 
 import org.apache.wicket.Page;
+import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.core.request.mapper.CryptoMapper;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
@@ -19,12 +20,15 @@ public class WicketWebConfig extends WebApplication {
 		setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
 		new AnnotatedMountScanner().scanPackage("dev.fringe.web").mount(this);
 		mountPage("/index",Index.class);
-//		mountPage("/mountedPath", TestPage2.class);
     }
 
     public Class<? extends Page> getHomePage() {
         return HomePage.class;
     }
 
+	@Override
+	public RuntimeConfigurationType getConfigurationType() {
+		return RuntimeConfigurationType.DEVELOPMENT;
+	}
 
 }

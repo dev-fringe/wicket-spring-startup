@@ -6,7 +6,7 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.wicketstuff.annotation.mount.MountPath;
 
-import dev.fringe.web.test2.TestPage2;
+import dev.fringe.web.test.test2.TestPage2;
 
 @MountPath(value = "/test", alt = { "/test/${param1}", "/test/${param1}/${param2}" })
 public class TestPage extends WebPage {
