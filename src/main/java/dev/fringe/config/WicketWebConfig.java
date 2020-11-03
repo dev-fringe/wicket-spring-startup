@@ -16,10 +16,13 @@ public class WicketWebConfig extends WebApplication {
 
     protected void init() {
         super.init();
+        getMarkupSettings().setStripWicketTags(true);
         getComponentInstantiationListeners().add(new SpringComponentInjector(this, new AnnotationConfigApplicationContext(App.class.getPackageName())));
 		setRootRequestMapper(new CryptoMapper(getRootRequestMapper(), this));
+		getDebugSettings().setDevelopmentUtilitiesEnabled(true);
 		new AnnotatedMountScanner().scanPackage("dev.fringe.web").mount(this);
 		mountPage("/index",Index.class);
+		getCspSettings().blocking().disabled();
     }
 
     public Class<? extends Page> getHomePage() {

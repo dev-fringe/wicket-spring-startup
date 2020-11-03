@@ -1,44 +1,32 @@
 package dev.fringe.model;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Movie implements Serializable {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-	private static final long serialVersionUID = 1633621452611180090L;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "movie")
+public class Movie {
 
-	private String _title;
-	private Integer _year;
-
-	public Movie() {
-	}
-
-	public Movie(String title) {
-		this.setTitle(title);
-	}
-
-	public Movie(String _title, Integer _year) {
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String title;
+	private Integer year;
+	
+	public Movie(String title, Integer year) {
 		super();
-		this._title = _title;
-		this._year = _year;
+		this.title = title;
+		this.year = year;
 	}
+	
 
-	public void setTitle(String title) {
-		this._title = title;
-	}
-
-	public String getTitle() {
-		return this._title;
-	}
-
-	public void setYear(Integer year) {
-		this._year = year;
-	}
-
-	public Integer getYear() {
-		return this._year;
-	}
-
-	public String toString() {
-		return "Movie [_title=" + _title + ", _year=" + _year + "]";
-	}
 }

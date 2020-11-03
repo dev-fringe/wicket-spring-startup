@@ -1,17 +1,3 @@
-<html xmlns:wicket>
-<body>
-
-	<a wicket:id="linkList"><span>link</span></a>
-	<wicket:message key="hello" />
-	<span wicket:id="friend"></span>!
-	<a wicket:id="open">Open the Dialog!</a>
-	<a wicket:id="change">change</a>
-	<div wicket:id="modal"></div>
-	  <form wicket:id="form">
-        <input type="text" wicket:id="msgInput" value="" size="50" />
-        <input type="submit" value="set message" />
-    </form>
-    <span wicket:id="msg" id="msg">Message goes here</span>
-	<!--         <span wicket:id="debug"/> -->
-</body>
-</html>
+<wicket:container wicket:id="pageHeader"></wicket:container>
+<span wicket:id="friend"></span>!
+<wicket:container wicket:id="pageFooter"></wicket:container>

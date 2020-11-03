@@ -22,7 +22,9 @@ public class FeedbackPage extends WebPage {
 			private static final long serialVersionUID = 7362051644544448492L;
 			protected void onSubmit() {
 				System.out.println("Form was submitted using " + getMethod());
+				System.out.println(get("q").getDefaultModelObjectAsString());
 			}
+			
 		};
 		add(form);
 		form.add(new TextField("q", new Model("")));
@@ -30,6 +32,8 @@ public class FeedbackPage extends WebPage {
 			private static final long serialVersionUID = -3707373539861753762L;
 			protected void onSubmit() {
 				System.out.println("Form was submitted using " + getMethod());
+				System.out.println(get("field").getDefaultModelObjectAsString());
+				System.out.println(getDefaultModelObjectAsString("field"));
 			}
 		};
 		add(form);
