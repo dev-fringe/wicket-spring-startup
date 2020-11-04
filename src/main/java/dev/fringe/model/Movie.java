@@ -1,5 +1,7 @@
 package dev.fringe.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,8 +16,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "movie")
-public class Movie {
+public class Movie implements Serializable{
 
+	private static final long serialVersionUID = 1487349209539955679L;
+	
 	@Id
 	@GeneratedValue
 	private Long id;
