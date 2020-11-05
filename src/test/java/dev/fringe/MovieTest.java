@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import dev.fringe.config.WicketWebConfig;
-import dev.fringe.web.list.MovieList;
+import dev.fringe.web.list.MoviesPage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -32,8 +32,8 @@ public class MovieTest {
     
 	@Test
 	public void test() {
-		tester.startPage(MovieList.class);
-		tester.assertRenderedPage(MovieList.class);
+		tester.startPage(MoviesPage.class);
+		tester.assertRenderedPage(MoviesPage.class);
         String html = tester.getLastResponse().getDocument();
         Document doc = Jsoup.parse(html);
         System.out.println(doc.body().toString());

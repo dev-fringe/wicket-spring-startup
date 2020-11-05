@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+	<script type="text/javascript" src="bundle.js"></script>
+	<app-index></app-index>
+	<form wicket:id="search" method="get">
+		title:
+		<input type="text" wicket:id="title" />
+		<input type="submit" value="search" />
+		<div wicket:id="feedback"></div>
+	</form>
+	<table>
+		<tr wicket:id="list">
+			<td><span wicket:id="title"></span>(<span wicket:id="year"></span>)
+				<a wicket:id="link"><span>link</span></a></td>
+		</tr>
+	</table>
+	<div wicket:id="navigator"></div>
+</body>
+</html>

@@ -18,19 +18,19 @@ import org.wicketstuff.lambda.components.ComponentFactory;
 
 import dev.fringe.model.Movie;
 import dev.fringe.service.MovieService;
-import dev.fringe.web.list.link.MovieDisplayPage;
+import dev.fringe.web.list.link.MoviePage;
 import dev.fringe.web.support.WicketUtil;
 
-@MountPath(value = "/movie_list")
-public class MovieList extends WebPage {
+@MountPath(value = "/movies")
+public class MoviesPage extends WebPage {
 	
 	@SpringBean MovieService movieService;
 
-	public MovieList(PageParameters params) {
+	public MoviesPage(PageParameters params) {
 		CompoundPropertyModel model = new CompoundPropertyModel<>(new Movie());
 		Form form = new Form("search", model) {
 			protected void onSubmit() {
-				setResponsePage(new MovieList(WicketUtil.toPageParameters(this.getModelObject()))); // search 자기 클래스를  부른다
+				setResponsePage(new MoviesPage(WicketUtil.toPageParameters(this.getModelObject()))); // search 자기 클래스를  부른다
 			}
 		};
 		add(form);
@@ -40,7 +40,7 @@ public class MovieList extends WebPage {
 			protected void populateItem(ListItem<Movie> item) {
 				item.add(new Label("title", new PropertyModel(item.getModel(), "title")));
 				item.add(new Label("year", new PropertyModel(item.getModel(), "year")));
-				item.add(ComponentFactory.link("link",(c) -> this.setResponsePage(new MovieDisplayPage(item.getModelObject())))); // redirect
+				item.add(ComponentFactory.link("link",(c) -> this.setResponsePage(new MoviePage(item.getModelObject())))); // redirect
 			}
 		};
 		add(listView);
