@@ -14,6 +14,7 @@
     "@material-ui/core": "^4.11.0",
     "@material/mwc-button": "^0.19.1",
     "@material/mwc-dialog": "^0.19.1",
+    "@material/mwc-list": "^0.19.1",
     "d3": "^6.2.0",
     "lit-element": "^2.4.0",
     "material-components-web": "^8.0.0",

@@ -10,13 +10,19 @@
 		<input type="submit" value="search" />
 		<div wicket:id="feedback"></div>
 	</form>
-	<table>
-		<tr wicket:id="list">
-			<td><span wicket:id="title"></span>(<span wicket:id="year"></span>)
-				<a wicket:id="link"><span>link</span></a></td>
-		</tr>
-	</table>
+	 <mwc-list multi>
+	 <span wicket:id="list">
+      <mwc-list-item twoline graphic="avatar" hasMeta>
+        <span wicket:id="title"></span>
+        <span slot="secondary" wicket:id="year">Secondary line</span>
+          <span slot="meta" class="material-icons"> <a wicket:id="link">info</a></span>
+      </mwc-list-item>
+      <li divider padded role="separator"></li>
+      </span>
+    </mwc-list>
+	
+	
+	
 	<div wicket:id="navigator"></div>
-	 <mwc-button id="sync" label="Sync" raised>sdsdsd</mwc-button>
 </body>
 </html>
