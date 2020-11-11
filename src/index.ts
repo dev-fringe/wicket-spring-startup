@@ -5,6 +5,11 @@
 import '@material/mwc-button';
 import '@material/mwc-list/mwc-list.js';
 import '@material/mwc-list/mwc-list-item.js';
+import '@material/mwc-checkbox';
+import '@material/mwc-formfield';
+import '@material/mwc-fab';
+import * as _ from "lodash";
+alert(_.padStart("Hello TypeScript!", 20, " "));
 // @customElement("app-index")
 // class index extends LitElement {
 //   static styles = css``;

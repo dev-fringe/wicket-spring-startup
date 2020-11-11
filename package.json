@@ -14,9 +14,13 @@
     "@material-ui/core": "^4.11.0",
     "@material/mwc-button": "^0.19.1",
     "@material/mwc-dialog": "^0.19.1",
+    "@material/mwc-fab": "^0.19.1",
+    "@material/mwc-formfield": "^0.19.1",
     "@material/mwc-list": "^0.19.1",
+    "@types/lodash": "^4.14.165",
     "d3": "^6.2.0",
     "lit-element": "^2.4.0",
+    "lodash": "^4.17.20",
     "material-components-web": "^8.0.0",
     "reset-css": "^5.0.1"
   }

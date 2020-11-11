@@ -2,6 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <body>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block"></link>
 	<script type="text/javascript" src="bundle.js"></script>
 	<app-index></app-index>
 	<form wicket:id="search" method="get">
@@ -11,18 +12,15 @@
 		<div wicket:id="feedback"></div>
 	</form>
 	 <mwc-list multi>
-	 <span wicket:id="list">
+	 <div wicket:id="list">
       <mwc-list-item twoline graphic="avatar" hasMeta>
         <span wicket:id="title"></span>
         <span slot="secondary" wicket:id="year">Secondary line</span>
-          <span slot="meta" class="material-icons"> <a wicket:id="link">info</a></span>
+          <span slot="meta" class="material-icons" wicket:id="link">info</span>
       </mwc-list-item>
       <li divider padded role="separator"></li>
-      </span>
+      </div>
     </mwc-list>
-	
-	
-	
 	<div wicket:id="navigator"></div>
 </body>
 </html>
